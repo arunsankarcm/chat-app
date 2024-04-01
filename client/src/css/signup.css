@@ -1,0 +1,100 @@
+.signup-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    /* Full viewport height */
+    background-color: #f0f0f0;
+    /* Light grey background */
+}
+
+.error-message {
+    color: #ff6b6b;
+    /* Light red color for error messages */
+    margin-bottom: 20px;
+}
+
+.signup-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    /* Space between form items */
+    max-width: 300px;
+    /* Maximum width of form */
+    width: 100%;
+    /* Full width */
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* Box-shadow for a subtle depth effect */
+    background: white;
+    border-radius: 8px;
+}
+
+.signup-form label {
+    font-size: 1rem;
+    color: #333;
+    /* Dark grey color */
+}
+
+.signup-form input {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    /* Light grey border */
+    font-size: 1rem;
+}
+
+.signup-form input:focus {
+    outline: none;
+    border-color: #007bff;
+    /* Blue border for focus */
+}
+
+.signup-form button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    /* Blue background */
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.signup-form button:hover {
+    background-color: #0056b3;
+    /* Darker blue on hover */
+}
+
+/* If you need additional responsiveness */
+@media (max-width: 768px) {
+    .signup-form {
+        width: 90%;
+    }
+}
+
+/* ... existing styles ... */
+
+.login-link {
+    margin-top: 20px;
+    font-size: 1rem;
+    color: #333;
+    /* Dark grey color, as used elsewhere */
+}
+
+.login-link span {
+    color: #007bff;
+    /* Blue color to match your theme */
+    cursor: pointer;
+    text-decoration: underline;
+    /* To indicate that it is clickable */
+}
+
+.login-link span:hover {
+    color: #0056b3;
+    /* Darker blue on hover to match the button hover */
+}
+
+/* ... any additional styles ... */
