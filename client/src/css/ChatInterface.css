@@ -1,0 +1,33 @@
+.chat-interface {
+    flex: 1;
+    /* Take up remaining space */
+    display: flex;
+    flex-direction: column;
+}
+
+.chat-header {
+    padding: 10px;
+    background-color: #2980b9;
+    color: white;
+}
+
+.chat-messages {
+    flex: 1;
+    /* Fill available space */
+    padding: 10px;
+    overflow-y: auto;
+    /* Add scroll for messages */
+}
+
+.chat-input {
+    padding: 10px;
+    background-color: #ecf0f1;
+}
+
+.chat-input input {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    box-sizing: border-box;
+    /* Prevents padding from adding to width */
+}
