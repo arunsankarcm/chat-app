@@ -14,9 +14,11 @@ const Login = () => {
         e.preventDefault();
         try {
             const response = await axios.post('http://localhost:3000/users/login', { username, password });
-            localStorage.setItem('authToken', response.data.token);
-            login(response.data.token);
-            navigate('/posts');
+            const { token, userId } = response.data; 
+            localStorage.setItem('authToken', token);
+            localStorage.setItem('userId', userId); // Store the userId
+            login(token, userId); // Pass the userId to the login function
+            navigate('/layout');
         } catch (error) {
             if (error.response) {
                 if (error.response.status === 401) {

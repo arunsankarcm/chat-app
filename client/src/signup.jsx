@@ -19,7 +19,7 @@ const Signup = () => {
 
         try {
             const response = await axios.post('http://localhost:3000/users/signup', { username, password });
-            navigate('/');
+            navigate('/login');
         } catch (error) {
             if (error.response && error.response.status === 400) {
                 alert(error.response.data.message);

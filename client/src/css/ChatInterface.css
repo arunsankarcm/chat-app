@@ -31,3 +31,28 @@
     box-sizing: border-box;
     /* Prevents padding from adding to width */
 }
+
+.message-item {
+    padding: 8px 12px;
+    margin-bottom: 10px;
+    border-radius: 20px;
+    max-width: 60%;
+    word-wrap: break-word;
+    /* Style adjustments for better message presentation */
+}
+
+/* Styles for current user's messages */
+.my-message {
+    background-color: #dcf8c6;
+    /* Light green background for user messages */
+    margin-left: auto;
+    /* Aligns the message to the right */
+}
+
+/* Styles for messages from others */
+.message-item:not(.my-message) {
+    background-color: #f0f0f0;
+    /* Light gray background for others' messages */
+    margin-right: auto;
+    /* Aligns the message to the left */
+}

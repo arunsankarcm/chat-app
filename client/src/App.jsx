@@ -5,20 +5,25 @@ import Signup from './signup';
 import Login from './login';
 import { AuthProvider } from './authcontext';
 import Layout from './Layout';
+import PrivateRoute from './PrivateRoute'; // Import the PrivateRoute component
 
-const App = () =>{
-  return(
-  <AuthProvider>
+const App = () => {
+  return (
+    <AuthProvider>
       <Router>
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/login" element={<Login />} />
-          <Route path="/layout" element={<Layout />} />
+          <Route path="/layout" element={
+            <PrivateRoute>
+              <Layout />
+            </PrivateRoute>
+          } />
         </Routes>
       </Router>
-  </AuthProvider>
+    </AuthProvider>
   )
 }
 
-export default App; 
+export default App;
