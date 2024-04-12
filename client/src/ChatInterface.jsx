@@ -8,8 +8,10 @@ function ChatInterface() {
     const [messages, setMessages] = useState([]);
     const { userId } = useAuth();
     const { currentConversationId } = useContext(ConversationContext);
+    const [newMessage, setNewMessage] = useState('');
 
     useEffect(() => {
+        console.log('Effect running', currentConversationId);
         const fetchMessages = async () => {
             if (currentConversationId) {
                 try {
@@ -19,12 +21,15 @@ function ChatInterface() {
                     console.error('Error fetching messages:', error);
                 }
             } else {
-                setMessages([]); // Clear messages if there's no current conversation ID
+                console.log('No conversation selected');
+                setMessages([]);
             }
         };
 
         fetchMessages();
     }, [currentConversationId]);
+
+    console.log('Rendering', messages);
 
     return (
         <div className="chat-interface">
@@ -37,9 +42,16 @@ function ChatInterface() {
                         {message.text}
                     </div>
                 ))}
+                {messages.length === 0 && <div>No messages yet.</div>}
             </div>
             <div className="chat-input">
-                <input type="text" placeholder="Type a message..." />
+                <input
+                    type="text"
+                    placeholder="Type a message..."
+                    value={newMessage}
+                    onChange={(e) => setNewMessage(e.target.value)}
+                />
+                <button onClick={() => console.log('Send message:', newMessage)}>Send</button>
             </div>
         </div>
     );

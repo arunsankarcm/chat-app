@@ -11,7 +11,7 @@ function Layout() {
         <div className="layout">
             <ConversationContext.Provider value={{ currentConversationId, setCurrentConversationId }}>
                 <Sidebar />
-                {currentConversationId && <ChatInterface />}
+                {<ChatInterface />}
             </ConversationContext.Provider>
         </div>
     );
